@@ -20,7 +20,7 @@ app.get("/subscribers/name",(req,res)=>{
 })
 
 app.get("/subscribers/:id",(req,res)=>{
-    subscriber.find({id}).then(ans=>{
+    subscriber.find({id:req.params.id}).then(ans=>{
         if(!ans){
             res.sendStatus(400).send("message: error.message");
         }
