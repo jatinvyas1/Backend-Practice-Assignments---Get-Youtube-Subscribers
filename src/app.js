@@ -20,13 +20,10 @@ app.get("/subscribers/names",(req,res)=>{
 })
 
 app.get("/subscribers/:id",(req,res)=>{
-    subscriber.find({id:req.params.id}).then(ans=>{
-        if(!ans){
-            res.sendStatus(400).send("message: error.message");
-        }
-        res.send(ans);
+    subscriber.findById(req.params.id,function(err,adv){
+        console.log(adv);
     })
-
+    res.send(ans);
 })
 
 
