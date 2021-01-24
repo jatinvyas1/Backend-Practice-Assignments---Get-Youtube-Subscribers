@@ -21,7 +21,8 @@ app.get("/subscribers/names",(req,res)=>{
 
 app.get("/subscribers/:id",(req,res)=>{
     subscriber.findById(req.params.id).then(ans=>res.send(ans)).catch(err=>{
-        res.status(400).send("message: error.message");
+        const response = {"message":err.message}
+        res.status(400).send(response);
     })
    
 })
