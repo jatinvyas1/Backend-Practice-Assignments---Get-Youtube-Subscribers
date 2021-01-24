@@ -14,7 +14,7 @@ app.get("/subscribers",(req,res)=>{
 
 
 app.get("/subscribers/name",(req,res)=>{
-    subscriber.find().select({"name":1,"subscribedChannel":1}).then(ans=>{
+    subscriber.find().select({"name":1,"subscribedChannel":1, "_id":0}).then(ans=>{
         res.send(ans);
     })
 })
